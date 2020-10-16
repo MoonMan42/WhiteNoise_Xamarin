@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WhiteNoise_Xamarin.MainPage">
+
+
+    <StackLayout>
+        <Label Text="White Noise"
+               HorizontalOptions="Center"
+               FontSize="Header"
+               FontAttributes="Bold"/>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Text="Play"
+                    Grid.Column="0"
+                    Clicked="StartPlay_Click" />
+            <Button Text="Stop"
+                    Grid.Column="1"
+                    Clicked="StopPlay_Click" />
+        </Grid>
+        
+        
+    </StackLayout>
+
+    
+</ContentPage>
