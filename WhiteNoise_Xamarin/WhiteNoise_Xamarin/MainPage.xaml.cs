@@ -1,4 +1,6 @@
 ﻿
+using Android.App;
+using Android.Content.PM;
 using Plugin.SimpleAudioPlayer;
 using System;
 using System.Collections.Generic;
@@ -13,6 +15,7 @@ using Xamarin.Forms;
 
 namespace WhiteNoise_Xamarin
 {
+   
     public partial class MainPage : ContentPage
     {
         // added Xam.Plugin.SimpleAudioPlayer in nuget
@@ -23,15 +26,13 @@ namespace WhiteNoise_Xamarin
         public MainPage()
         {
             InitializeComponent();
-
-            player = CrossSimpleAudioPlayer.Current;
         }
 
         private void StartPlay_Click(object sender, EventArgs e)
         {
             var assembly = typeof(App).GetTypeInfo().Assembly;
-            Stream audioStream = assembly.GetManifestResourceStream("WhiteNoise_Xamarin." + "WhiteOceanNoise.mp3");
-
+            Stream audioStream = assembly.GetManifestResourceStream("WhiteNoise_Xamarin." + "WhiteOceanNoiseLong2b.mp3");
+            player = CrossSimpleAudioPlayer.Current;
             player.Load(audioStream);
 
             player.Play();
